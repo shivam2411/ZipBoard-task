@@ -1,0 +1,39 @@
+<template name="welcomeNote">
+   <div class="col-md-6 col-md-offset-3">
+    <div class="jumbotron">
+      <h3>Welcome to discussion forum</h3>
+      
+    </div>
+    {{> loginButtons}}
+  </div>
+</template>
+
+<template name = "test">
+	<form class = "new-resolution">
+		<input type="text" name="title" placeholder="Whats on your mind">
+		<input type="submit" value="Post">
+	</form>
+	<div class = "loginHead" align = "center">
+		{{>loginButtons}}
+
+	</div>
+			
+	{{#each discussions}}
+			
+	{{> resolution}}
+	{{/each}}
+</template>
+
+<template name = "resolution">
+	<li>
+		{{createdBy}}:{{title}}  
+
+		{{>timeSince}}
+	</li>
+</template>
+
+
+<template name ="timeSince">
+	{{time(createdAt)}} ago
+</template>
+
